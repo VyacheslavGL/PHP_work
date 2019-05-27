@@ -34,5 +34,10 @@ foreach ($arr as $key => $value){
     }
 }
 
+array_multisort($arr);
+print_r($arr);
+
+
+//https://snipp.ru/view/110
 
 ?>
