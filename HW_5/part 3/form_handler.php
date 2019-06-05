@@ -15,26 +15,35 @@ function type_size($type, $size){
     for ($i = 0; $i<count($type); $i++){
         $exp = explode('/', $type[$i]);
         if ($exp[0] === 'image' && size($size)){
-            echo "Файл добавлен</br>";
+            echo "Файл добавлен $exp[0] - $size[$i] </br>";
         }else{
-            echo "Файл не добавлен size</br>";
+            echo "Файл не добавлен $exp[0] - $size[$i]</br>";
         }
     }
 }
 
-function size($size)
-{
-    foreach ($size as $key => $value) {
-        var_dump($value);
-        if ($value <= 150000) {
-            return true;
-        } else {
-            return false;
+function size($size){
+        for ($i=0; $i<count($size); $i++){
+            if ($size[$i] <= 150000) {
+//                var_dump($size[$i]);
+//                echo "Файл добавлен</br>";
+                return true;
+            } else {
+//                var_dump($size[$i]);
+//                echo "Файл не добавлен size</br>";
+                return false;
+            }
         }
-    }
+
 }
+
 
 type_size($type, $size);
+//size($size);
+
+
+
+
 
 /*$name = $file['picture']['name'];
 //var_dump($name);
