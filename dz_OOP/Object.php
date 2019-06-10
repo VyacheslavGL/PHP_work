@@ -21,7 +21,7 @@ $pat1->setDoctor($hirurg);
 $pat2 = new Patient();
 $pat2->setName("Petya");
 $pat2->setDoctor($hirurg);
-$pat2->setDate(date_create("2012-10-30 11:30"));
+$pat2->setDate(date_create("2015-1-30 11:30"));
 
 $pat3 = new Patient();
 $pat3->setName("Vlad");
