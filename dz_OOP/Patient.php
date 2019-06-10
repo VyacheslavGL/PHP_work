@@ -34,7 +34,7 @@ class Patient
     public function setDate(DateTime $date)
     {
 //      $arr = $hirurg->getPatient();
-//      $arr = $hirurg->getPatient();
+//      $arr = $this->date;
 //        foreach ($arr as $one_article){
 //            /*$one_article->getName();
 //            $one_article->getDate()->format("Y-m-d H:i:s");*/
