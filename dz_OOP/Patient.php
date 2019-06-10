@@ -26,14 +26,14 @@ class Patient
 
     public function getDate()
     {
-      $date = $this->date;
-//       return $this->date;
-        foreach ($date as $key => $value){
+//      $date = $this->date;
+       return $this->date;
+//        foreach ($date as $key => $value){
 //            echo "ваша дата: ".$key." - ".$value."</br>";
 //            echo $date->$key."</br>";
-            return $date->date."</br>";
+//            return $date->date."</br>";
 //            echo  $value;
-        }
+//        }
 //        return $value;
 //     return  $this->date = format("Y-m-d H:i:s");*/
     }
