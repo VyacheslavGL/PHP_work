@@ -4,5 +4,5 @@
 interface Patient
 {
 
-    public function patient();
+    public function zapic();
 }

@@ -3,5 +3,6 @@
 
 interface Doctor
 {
-    public function doctor();
+    public function addPatient();
+    public function seeAllZapic();
 }

@@ -7,17 +7,17 @@ require_once "Zapic.php";
 class Glavvrach implements Doctor, Patient, Zapic
 {
 
-    public function doctor()
+    public function addPatient()
     {
 
     }
 
-    public function patient()
+    public function seeAllZapic()
     {
 
     }
 
-    public function date()
+    public function zapic()
     {
 
     }

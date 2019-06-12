@@ -4,13 +4,27 @@ require_once "Glavvrach.php";
 class Doctors extends Glavvrach
 {
 
-    public function patient()
+    private $patient = null;
+    private $date = [];
+
+    public function __construct()
     {
-        parent::patient();
+        $this->date = date_create();
     }
 
-    public function date()
+
+    public function addPatient()
     {
-        parent::date();
+        parent::addPatient();
+    }
+
+    public function seeAllZapic()
+    {
+        parent::seeAllZapic();
+    }
+
+    public function zapic()
+    {
+        parent::zapic();
     }
 }
