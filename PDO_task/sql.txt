@@ -4,8 +4,8 @@ use tasks;
 CREATE TABLE tasks(
     id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
 	title varchar(200) NOT NULL,
-    date_start datetime NOT NULL,
-    date_end datetime NOT NULL,
+    date_start date NOT NULL,
+    date_end date NOT NULL,
     task_status varchar(50) not null,
     description text not null
 );
