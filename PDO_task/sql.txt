@@ -1,0 +1,16 @@
+CREATE DATABASE tasks;
+use tasks;
+
+CREATE TABLE tasks(
+    id int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+	title varchar(200) NOT NULL,
+    date_start datetime NOT NULL,
+    date_end datetime NOT NULL,
+    task_status varchar(50) not null,
+    description text not null
+);
+
+INSERT INTO tasks (title, date_start, date_end, task_status, description) VALUES ('Задача 1', '2019-06-21', '2019-07-05', 'Не началась', 'Это моя первая задача');
+INSERT INTO tasks (title, date_start, date_end, task_status, description) VALUES ('Задача 2', '2019-06-24', '2019-07-09', 'В ожидании', 'Это моя вторая задача');
+
+select * from tasks;
