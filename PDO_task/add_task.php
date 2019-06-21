@@ -7,17 +7,13 @@
  */
 
 $post = $_POST;
-var_dump($post);
+
 $title = $post['title'];
 $date_start = $post['date_start'];
 $date_end = $post['date_end'];
 $task_status = $post['task_status'];
 $description = $post['description'];
-var_dump($title);
-var_dump($date_start);
-var_dump($date_end);
-var_dump($task_status);
-var_dump($description);
+
 
 
 $server = 'localhost'; //адресс сервера
@@ -25,8 +21,10 @@ $dbName = 'tasks'; //имя БД
 $username = 'root'; //имя пользователя БД
 $pwd = '';
 
+
+
 $connection = new PDO("mysql:host=$server;dbname=$dbName", $username, $pwd, $options);
-var_dump($connection);
+//var_dump($connection);
 $sql = 'INSERT INTO tasks (title, date_start, date_end, task_status, description) VALUES (:title, :date_start, :date_end, :task_status, :description)'; //строка запроса
 
 $params = [
@@ -38,14 +36,9 @@ $params = [
 ];
 
 $statement = $connection->prepare($sql);
-/*if ($statement->execute($params)){
-    echo "Данные успешно обнавлены</br>";
-}*/
-
 
 
 //echo "</br>";
-
 
 
 /*<input type="button" value="Добавить" onclick="document.write('<?php $statement->execute($params);?>');" />*/
@@ -78,7 +71,6 @@ $statement = $connection->prepare($sql);
             <option value="Отложена">Отложена</option>
         </select>
     </p>
-<!--    <label for="textarea">Описание:</label>-->
     <h3>Описание:</h3>
     <p><textarea style="resize: none; width: 300px; height: 100px;" name="description">Опишите задачу</textarea></p>
     <input type="submit" onclick="<?php $statement->execute($params);?>" value="Добавить">

@@ -1,4 +1,9 @@
 <?php
+session_start();
+$id = $value['id'];
+$_SESSION['id'] = $id;
+
+
 $server = 'localhost'; //адресс сервера
 $dbName = 'tasks'; //имя БД
 $username = 'root'; //имя пользователя БД
@@ -31,7 +36,13 @@ $data = $statement->fetchAll(PDO::FETCH_ASSOC);
 <h3>Дата окончания: <?php echo $value['date_end'];?></h3>
 <p>Статус: <?php echo $value['task_status'];?></p>
 <p>Описание: <?php echo $value['description'];?></p>
-<a href="editing_task.php">Редактировать</a>
+<form action="editing_task.php" method="post">
+    <input type="text" value="<?php  echo $value['id'];?>" name="id" style="display: none">
+    <input type="submit" value="Редактировать">
+    <input type="submit" value="Удалить">
+<!--    <a href="editing_task.php">Редактировать</a>-->
+</form>
+
 <?php endforeach;?>
 
 <a href="add_task.php">Добавить задачу</a>
