@@ -1,0 +1,33 @@
+"autoload" - правило автозагрузки файлов
+
+psr-4 - то как будут подгружаться файлы
+
+имя разработчика - имя проекта - все с большой буквы
+
+Web\\FrontController\\" src -  будет распространятся на ту папку которую тут укажем
+
+composer dump-autoload - что бы композер смог сгенерировать файлы для автозагрузки
+
+CREATE TABLE IF NOT EXISTS `frontcontroller`.`Picture` (
+  `id` INT(11) NOT NULL auto_increment,
+  `title` VARCHAR(150) NOT NULL,
+  `description` MEDIUMTEXT NOT NULL,
+  `img` VARCHAR(255) NOT NULL,
+  `yearCreated` YEAR NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+
+CREATE TABLE IF NOT EXISTS `frontcontroller`.`Article` (
+  `id` INT(11) NOT NULL auto_increment,
+  `title` VARCHAR(150) NOT NULL,
+  `description` MEDIUMTEXT NOT NULL,
+  `yearCreated` YEAR NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+
+У статьи будет название, её текст и дата публикации. Нужна будет форма для её добавления,
+страница для вывода всех статей и страница для одной
+1. Прописал ссылку в template
+2. Создал ArticleRepository
