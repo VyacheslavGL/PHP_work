@@ -1,27 +1,31 @@
 <?php
+namespace Web\FrontController\Controllers;
 
-//для главной страницы
-class IndexController
+use Web\FrontController\Core\Controller;
+use Web\FrontController\Models\PictureRepository;
+
+class IndexController extends Controller
 {
+    private $pictureRepository;
+
+    public function __construct()
+    {
+        $this->pictureRepository = new PictureRepository();
+    }
 
     public function indexAction(){
-        echo "Генерация главной страницы";
-        $content = 'main.php';
-        $template = 'template.php';
-        $data = [
-            'title' => 'Главная'
+        session_start();
+        $content='main.php';
+        $template='template.php';
+        $pictures = $this->pictureRepository->getAll();
+        $data=[
+            'title'=>'Главная',
+            'pictures' => $pictures,
+            'auth' => isset($_SESSION['name'])
         ];
-       echo $this->renderPage($content, $template, $data);
+        //вывели страничку $page
+        echo $this->renderPage($content, $template, $data);
     }
 
-    public function renderPage($content, $template, $data = [])
-    {
-        extract($data);
-//        $title = 'Главная'; //ключ становится переменная а значение значением переменной
-        ob_start(); //открываем буфер
-        include_once __DIR__ . '/../Views/'.$template;
-        $page = ob_get_contents(); //считывает в буфер
-        ob_end_clean();  //закрываем буфер
-        return $page;
-    }
 }
+
